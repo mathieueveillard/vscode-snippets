@@ -1,0 +1,63 @@
+{
+  "iife": {
+    "prefix": "iife",
+    "body": ["(function() {", "", "})()"],
+    "description": "Immediatly Invoked Function Expression"
+  },
+  "Function": {
+    "prefix": "function",
+    "body": ["function ${1:functionName}(): ${2:ReturnType} {", "", "}"],
+    "description": "Function"
+  },
+  "Function of arity 1": {
+    "prefix": "function-arity-1",
+    "body": ["const ${1:functionName} = (): ${2:ReturnType} => "],
+    "description": "Function of arity 1"
+  },
+  "Function of arity 2": {
+    "prefix": "function-arity-2",
+    "body": ["const ${1:functionName} = () => (): ${2:ReturnType} => "],
+    "description": "Function of arity 2"
+  },
+  "Function of arity 3": {
+    "prefix": "function-arity-3",
+    "body": ["const ${1:functionName} = () => () => (): ${2:ReturnType} => "],
+    "description": "Function of arity 3"
+  },
+  "React Component": {
+    "prefix": "react-component",
+    "body": [
+      "import * as React from \"react\";",
+      "",
+      "export interface Props {}",
+      "",
+      "export const ${1:ComponentName}: React.FunctionComponent<Props> = ({  }: Props) => {",
+      "  return <div />;",
+      "};"
+    ],
+    "description": "React Component"
+  },
+  "React render props": {
+    "prefix": "react-render-props",
+    "body": ["${1:render}(): React.ReactElement;"],
+    "description": "React render props"
+  },
+  "React children": {
+    "prefix": "react-children",
+    "body": ["children: React.ReactNode;"],
+    "description": "React children"
+  },
+  "React Redux own | state | dispatch props": {
+    "prefix": "react-redux-own-state-dispatch-props",
+    "body": [
+      "export interface OwnProps {}",
+      "",
+      "export interface StateProps {}",
+      "",
+      "export interface DispatchProps {}",
+      "",
+      "export type Props = OwnProps & StateProps & DispatchProps;"
+    ],
+    "description": "React Redux: OwnProps, StateProps, DispatchProps"
+  }
+}
