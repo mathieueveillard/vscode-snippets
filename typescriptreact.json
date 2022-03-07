@@ -27,13 +27,16 @@
   "React Component": {
     "prefix": "react-component",
     "body": [
-      "import * as React from \"react\";",
+      "import React from \"react\";",
       "",
       "export interface Props {}",
       "",
-      "export const ${1:ComponentName}: React.FunctionComponent<Props> = ({  }: Props) => {",
+      "const Component: React.FunctionComponent<Props> = ({}) => {",
       "  return <div />;",
-      "};"
+      "};",
+      "",
+      "export default Component;",
+      ""
     ],
     "description": "React Component"
   },
