@@ -1,0 +1,54 @@
+{
+  "typescript": {
+    "prefix": "ts",
+    "body": ["```typescript", "${1}", "```"],
+    "description": "TypeScript code block"
+  },
+  "dos-and-donts": {
+    "prefix": "do",
+    "body": [
+      "Don't:",
+      "",
+      "```typescript",
+      "${1}",
+      "```",
+      "",
+      "Do:",
+      "",
+      "```typescript",
+      "",
+      "```"
+    ],
+    "description": "Do's and don'ts"
+  },
+  "title-1": {
+    "prefix": "t1",
+    "body": ["# "],
+    "description": "Title level 1"
+  },
+  "title-2": {
+    "prefix": "t2",
+    "body": ["## "],
+    "description": "Title level 2"
+  },
+  "title-3": {
+    "prefix": "t3",
+    "body": ["### "],
+    "description": "Title level 3"
+  },
+  "title-4": {
+    "prefix": "t4",
+    "body": ["#### "],
+    "description": "Title level 4"
+  },
+  "title-5": {
+    "prefix": "t5",
+    "body": ["##### "],
+    "description": "Title level 5"
+  },
+  "title-6": {
+    "prefix": "t6",
+    "body": ["###### "],
+    "description": "Title level 6"
+  }
+}

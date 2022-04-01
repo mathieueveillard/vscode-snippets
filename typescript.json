@@ -45,7 +45,7 @@
       "// GIVEN",
       "",
       "// WHEN",
-      "const actual: ${2:number} = ${1:functionUnderTest}();",
+      "const actual = ${1:functionUnderTest}();",
       "",
       "// THEN",
       "const expected: ${2:number} = 0;",
