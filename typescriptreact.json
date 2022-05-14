@@ -49,18 +49,5 @@
     "prefix": "react-children",
     "body": ["children: React.ReactNode;"],
     "description": "React children"
-  },
-  "React Redux own | state | dispatch props": {
-    "prefix": "react-redux-own-state-dispatch-props",
-    "body": [
-      "export interface OwnProps {}",
-      "",
-      "export interface StateProps {}",
-      "",
-      "export interface DispatchProps {}",
-      "",
-      "export type Props = OwnProps & StateProps & DispatchProps;"
-    ],
-    "description": "React Redux: OwnProps, StateProps, DispatchProps"
   }
 }
