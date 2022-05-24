@@ -49,5 +49,10 @@
     "prefix": "react-children",
     "body": ["children: React.ReactNode;"],
     "description": "React children"
+  },
+  "Use translation": {
+    "prefix": "translation",
+    "body": ["const { t } = useTranslation();"],
+    "description": "react-i18next useTranslation hook"
   }
 }
