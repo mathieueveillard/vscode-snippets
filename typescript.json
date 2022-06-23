@@ -1,13 +1,8 @@
 {
   "iife": {
     "prefix": "iife",
-    "body": ["(function () {", "", "})()"],
+    "body": ["(() => {", "", "})()"],
     "description": "Immediatly Invoked Function Expression"
-  },
-  "Function": {
-    "prefix": "function",
-    "body": ["function ${1:functionName}(): ${2:ReturnType} {", "", "}"],
-    "description": "Function"
   },
   "Function of arity 1": {
     "prefix": "function-arity-1",
@@ -26,13 +21,13 @@
   },
   "Jest describe": {
     "prefix": "jest-describe",
-    "body": ["describe(\"\", function () {", "    ", "});", ""],
+    "body": ["describe(\"\", () => {", "    ", "});", ""],
     "description": "Jest describe"
   },
   "Jest test": {
     "prefix": "jest-test",
     "body": [
-      "test(\"\", function () {",
+      "test(\"\", () => {",
       "  expect(${1:actual}).toEqual(${2:expected});",
       "});",
       ""
