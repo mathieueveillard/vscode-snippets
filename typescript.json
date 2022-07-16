@@ -21,33 +21,42 @@
   },
   "Jest describe": {
     "prefix": "jest-describe",
-    "body": ["describe(\"\", () => {", "    ", "});", ""],
+    "body": ["describe(\"\", () => {", "  ", "});"],
     "description": "Jest describe"
   },
   "Jest test": {
     "prefix": "jest-test",
     "body": [
       "test(\"\", () => {",
-      "  expect(${1:actual}).toEqual(${2:expected});",
-      "});",
-      ""
+      "  // GIVEN",
+      "  ",
+      "  // WHEN",
+      "  const actual = ${1:functionUnderTest}();",
+      "  ",
+      "  // THEN",
+      "  const expected: ${2:number} = 0;",
+      "  expect(actual).toEqual(expected);",
+      "});"
     ],
-    "description": "Jest test short"
+    "description": "Jest test"
   },
-  "Given When Then": {
-    "prefix": "given-when-then",
+  "Jest full": {
+    "prefix": "jest-describe-and-test",
     "body": [
-      "// GIVEN",
-      "",
-      "// WHEN",
-      "const actual = ${1:functionUnderTest}();",
-      "",
-      "// THEN",
-      "const expected: ${2:number} = 0;",
-      "expect(actual).toEqual(expected);",
-      ""
+      "describe(\"\", () => {",
+      "  test(\"\", () => {",
+      "    // GIVEN",
+      "    ",
+      "    // WHEN",
+      "    const actual = ${1:functionUnderTest}();",
+      "    ",
+      "    // THEN",
+      "    const expected: ${2:number} = 0;",
+      "    expect(actual).toEqual(expected);",
+      "  });",
+      "});"
     ],
-    "description": "Given, When, Then structuration"
+    "description": "Jest describe and test"
   },
   "Redux thunk": {
     "prefix": "redux-thunk",
