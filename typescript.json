@@ -58,6 +58,14 @@
     ],
     "description": "Jest describe and test"
   },
+  "Triangulation": {
+    "prefix": "jest-test-tdd-triangulation",
+    "body": ["test(\"[Triangulation] \", () => {});"]
+  },
+  "Control": {
+    "prefix": "jest-test-tdd-control",
+    "body": ["test(\"[Control] \", () => {});"]
+  },
   "Redux thunk": {
     "prefix": "redux-thunk",
     "body": [
