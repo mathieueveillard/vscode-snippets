@@ -40,6 +40,20 @@
     ],
     "description": "Jest test"
   },
+  "Jest property-based testing": {
+    "prefix": "jest-test-pbt",
+    "body": [
+      "test(\"\", () => {",
+      "  fc.assert(",
+      "    fc.property(fc.record({ a: fc.nat(), b: fc.nat() }), ({ a, b }) => {",
+      "      fc.pre(a < b);",
+      "      return true;",
+      "    })",
+      "  );",
+      "});"
+    ],
+    "description": "Jest test"
+  },
   "Jest full": {
     "prefix": "jest-describe-and-test",
     "body": [
@@ -65,53 +79,5 @@
   "Control": {
     "prefix": "jest-test-tdd-control",
     "body": ["test(\"[Control] \", () => {});"]
-  },
-  "Redux thunk": {
-    "prefix": "redux-thunk",
-    "body": [
-      "import { Thunk, ExtendedDispatch as Dispatch, ExtraArgument } from \"business/definitions\";",
-      "import { ApplicationState } from \"business/state\";",
-      "",
-      "export function create${1:ThunkName}Thunk(): Thunk<void> {",
-      "  return async (",
-      "    dispatch: Dispatch,",
-      "    getState: () => ApplicationState,",
-      "    {  }: ExtraArgument",
-      "  ) => {",
-      "    const state: ApplicationState = getState();",
-      "  };",
-      "}"
-    ],
-    "description": "Redux thunk creator"
-  },
-  "Redux thunk test": {
-    "prefix": "redux-thunk-test",
-    "body": [
-      "import { mockStore } from \"util/mockStore\";",
-      "import { mockObject } from \"util/mockObject\";",
-      "import { RecursivePartial } from \"util/recursivePartial\";",
-      "import { Thunk, ExtraArgument } from \"business/definitions\";",
-      "import { ApplicationState } from \"business/state\";",
-      "import { create${1:ThunkName}Thunk } from \"./thunks\";",
-
-      "describe(\"Test of create${1:ThunkName}Thunk()\", () => {",
-      "test(\"\", async () => {",
-      "    // GIVEN",
-      "    const extraArgument: RecursivePartial<ExtraArgument> = {};",
-      "    const initialState = mockObject<ApplicationState>();",
-      "    const store = mockStore(extraArgument, initialState);",
-      "",
-      "    // WHEN",
-      "    const thunk: Thunk<void> = create${1:ThunkName}Thunk();",
-      "    await store.dispatch(thunk);",
-      "",
-      "    // THEN",
-      "    const actualActions = store.getActions();",
-      "    const expectedActions = [];",
-      "    expect(actualActions).toEqual(expectedActions);",
-      "  });",
-      "});"
-    ],
-    "description": "Test of a thunk creator"
   }
 }
