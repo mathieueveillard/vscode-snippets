@@ -40,6 +40,15 @@
     ],
     "description": "Jest test"
   },
+  "Jest short test": {
+    "prefix": "jest-test-short",
+    "body": [
+      "test(\"\", () => {",
+      "  expect(${1:functionUnderTest}()).toEqual(${2:expected});",
+      "});"
+    ],
+    "description": "Jest short test"
+  },
   "Jest property-based testing": {
     "prefix": "jest-test-pbt",
     "body": [
