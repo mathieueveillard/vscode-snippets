@@ -4,31 +4,37 @@
     "body": ["(() => {", "", "})()"],
     "description": "Immediatly Invoked Function Expression"
   },
-  "Function of arity 1": {
+  "1-arity function": {
     "prefix": "function-arity-1",
     "body": ["const ${1:functionName} = (): ${2:ReturnType} => "],
     "description": "Function of arity 1"
-  },
-  "Function of arity 2": {
-    "prefix": "function-arity-2",
-    "body": ["const ${1:functionName} = () => (): ${2:ReturnType} => "],
-    "description": "Function of arity 2"
-  },
-  "Function of arity 3": {
-    "prefix": "function-arity-3",
-    "body": ["const ${1:functionName} = () => () => (): ${2:ReturnType} => "],
-    "description": "Function of arity 3"
   },
   "React Component": {
     "prefix": "react-component",
     "body": [
       "import React from \"react\";",
       "",
-      "export interface Props {}",
+      "const Component: React.FunctionComponent = () => <div>",
       "",
-      "const Component: React.FunctionComponent<Props> = ({}) => {",
-      "  return <div />;",
-      "};",
+      "</div>",
+      "",
+      "export default Component;",
+      ""
+    ],
+    "description": "React Component"
+  },
+  "React Component with props": {
+    "prefix": "react-component-props",
+    "body": [
+      "import React from \"react\";",
+      "",
+      "type Props = {",
+      "",
+      "}",
+      "",
+      "const Component: React.FunctionComponent<Props> = ({}) => <div>",
+      "",
+      "</div>",
       "",
       "export default Component;",
       ""
@@ -44,10 +50,5 @@
     "prefix": "react-children",
     "body": ["children: React.ReactNode;"],
     "description": "React children"
-  },
-  "Use translation": {
-    "prefix": "translation",
-    "body": ["const { t } = useTranslation();"],
-    "description": "react-i18next useTranslation hook"
   }
 }

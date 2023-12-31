@@ -4,20 +4,10 @@
     "body": ["(() => {", "", "})()"],
     "description": "Immediatly Invoked Function Expression"
   },
-  "Function of arity 1": {
+  "1-arity function": {
     "prefix": "function-arity-1",
     "body": ["const ${1:functionName} = (): ${2:ReturnType} => "],
     "description": "Function of arity 1"
-  },
-  "Function of arity 2": {
-    "prefix": "function-arity-2",
-    "body": ["const ${1:functionName} = () => (): ${2:ReturnType} => "],
-    "description": "Function of arity 2"
-  },
-  "Function of arity 3": {
-    "prefix": "function-arity-3",
-    "body": ["const ${1:functionName} = () => () => (): ${2:ReturnType} => "],
-    "description": "Function of arity 3"
   },
   "Jest describe": {
     "prefix": "jest-describe",
@@ -28,12 +18,12 @@
     "prefix": "jest-test",
     "body": [
       "test(\"\", () => {",
-      "  // GIVEN",
+      "  // Given",
       "  ",
-      "  // WHEN",
+      "  // When",
       "  const actual = ${1:functionUnderTest}();",
       "  ",
-      "  // THEN",
+      "  // Then",
       "  const expected: ${2:number} = 0;",
       "  expect(actual).toEqual(expected);",
       "});"
@@ -68,25 +58,17 @@
     "body": [
       "describe(\"\", () => {",
       "  test(\"\", () => {",
-      "    // GIVEN",
+      "    // Given",
       "    ",
-      "    // WHEN",
+      "    // When",
       "    const actual = ${1:functionUnderTest}();",
       "    ",
-      "    // THEN",
+      "    // Then",
       "    const expected: ${2:number} = 0;",
       "    expect(actual).toEqual(expected);",
       "  });",
       "});"
     ],
     "description": "Jest describe and test"
-  },
-  "Triangulation": {
-    "prefix": "jest-test-tdd-triangulation",
-    "body": ["test(\"[Triangulation] \", () => {});"]
-  },
-  "Control": {
-    "prefix": "jest-test-tdd-control",
-    "body": ["test(\"[Control] \", () => {});"]
   }
 }
