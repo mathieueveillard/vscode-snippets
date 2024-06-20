@@ -50,5 +50,35 @@
     "prefix": "react-children",
     "body": ["children: React.ReactNode;"],
     "description": "React children"
+  },
+  "Jest describe": {
+    "prefix": "jest-describe",
+    "body": ["describe(\"\", () => {", "  ", "});"],
+    "description": "Jest describe"
+  },
+  "Jest test": {
+    "prefix": "jest-test",
+    "body": [
+      "test(\"\", () => {",
+      "  // Given",
+      "  ",
+      "  // When",
+      "  const actual = ${1:functionUnderTest}();",
+      "  ",
+      "  // Then",
+      "  const expected: ${2:number} = 0;",
+      "  expect(actual).toEqual(expected);",
+      "});"
+    ],
+    "description": "Jest test"
+  },
+  "Jest short test": {
+    "prefix": "jest-test-short",
+    "body": [
+      "test(\"\", () => {",
+      "  expect(${1:functionUnderTest}()).toEqual(${2:expected});",
+      "});"
+    ],
+    "description": "Jest short test"
   }
 }
