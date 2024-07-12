@@ -1,84 +1,141 @@
 {
-  "iife": {
-    "prefix": "iife",
-    "body": ["(() => {", "", "})()"],
-    "description": "Immediatly Invoked Function Expression"
-  },
-  "1-arity function": {
-    "prefix": "function-arity-1",
-    "body": ["const ${1:functionName} = (): ${2:ReturnType} => "],
-    "description": "Function of arity 1"
-  },
-  "React Component": {
-    "prefix": "react-component",
-    "body": [
-      "import React from \"react\";",
-      "",
-      "const Component: React.FunctionComponent = () => <div>",
-      "",
-      "</div>",
-      "",
-      "export default Component;",
-      ""
-    ],
-    "description": "React Component"
-  },
-  "React Component with props": {
-    "prefix": "react-component-props",
-    "body": [
-      "import React from \"react\";",
-      "",
-      "type Props = {",
-      "",
-      "}",
-      "",
-      "const Component: React.FunctionComponent<Props> = ({}) => <div>",
-      "",
-      "</div>",
-      "",
-      "export default Component;",
-      ""
-    ],
-    "description": "React Component"
-  },
-  "React render props": {
-    "prefix": "react-render-props",
-    "body": ["${1:render}(): React.ReactElement;"],
-    "description": "React render props"
-  },
-  "React children": {
-    "prefix": "react-children",
-    "body": ["children: React.ReactNode;"],
-    "description": "React children"
-  },
-  "Jest describe": {
-    "prefix": "jest-describe",
-    "body": ["describe(\"\", () => {", "  ", "});"],
-    "description": "Jest describe"
-  },
-  "Jest test": {
-    "prefix": "jest-test",
-    "body": [
-      "test(\"\", () => {",
-      "  // Given",
-      "  ",
-      "  // When",
-      "  const actual = ${1:functionUnderTest}();",
-      "  ",
-      "  // Then",
-      "  const expected: ${2:number} = 0;",
-      "  expect(actual).toEqual(expected);",
-      "});"
-    ],
-    "description": "Jest test"
-  },
-  "Jest short test": {
-    "prefix": "jest-test-short",
-    "body": [
-      "test(\"\", () => {",
-      "  expect(${1:functionUnderTest}()).toEqual(${2:expected});",
-      "});"
-    ],
-    "description": "Jest short test"
-  }
+	"iife": {
+		"prefix": "iife",
+		"body": [
+			"(() => {",
+			"",
+			"})()"
+		],
+		"description": "Immediatly Invoked Function Expression"
+	},
+	"1-arity function": {
+		"prefix": "function-arity-1",
+		"body": [
+			"const ${1:functionName} = (): ${2:ReturnType} => "
+		],
+		"description": "Function of arity 1"
+	},
+	"React Component": {
+		"prefix": "react-component",
+		"body": [
+			"import React from \"react\";",
+			"",
+			"const Component: React.FunctionComponent = () => <div>",
+			"",
+			"</div>;",
+			"",
+			"export default Component;",
+			""
+		],
+		"description": "React Component"
+	},
+	"React Component with props": {
+		"prefix": "react-component-props",
+		"body": [
+			"import React from \"react\";",
+			"",
+			"type Props = {",
+			"",
+			"};",
+			"",
+			"const Component: React.FunctionComponent<Props> = ({}) => <div>",
+			"",
+			"</div>;",
+			"",
+			"export default Component;",
+			""
+		],
+		"description": "React Component"
+	},
+	"React Component with children": {
+		"prefix": "react-component-children",
+		"body": [
+			"import React from \"react\";",
+			"",
+			"type Props = {",
+			"  children: React.ReactNode;",
+			"};",
+			"",
+			"const Component: React.FunctionComponent<Props> = ({ children }) => (",
+			"  <div>{children}</div>",
+			");",
+			"",
+			"export default Component;",
+			""
+		],
+		"description": "React Component"
+	},
+	"React Component with Sub Component": {
+		"prefix": "react-component-sub-component",
+		"body": [
+			"import React from \"react\";",
+			"import SubComponent from \"./SubComponent\";",
+			"",
+			"type Props = {",
+			"",
+			"};",
+			"",
+			"const MainComponent: React.FunctionComponent<Props> = ({}) => <div>",
+			"",
+			"</div>;",
+			"",
+			"const Component = MainComponent as React.FunctionComponent<Props> & {",
+			"  SubComponent: typeof SubComponent;",
+			"};",
+			"",
+			"Component.SubComponent = SubComponent;",
+			"",
+			"export default Component;",
+			""
+		],
+		"description": "React Component with Sub Component"
+	},
+	"React render props": {
+		"prefix": "react-render-props",
+		"body": [
+			"${1:render}(): React.ReactElement;"
+		],
+		"description": "React render props"
+	},
+	"React children": {
+		"prefix": "react-children",
+		"body": [
+			"children: React.ReactNode;"
+		],
+		"description": "React children"
+	},
+	"Jest describe": {
+		"prefix": "jest-describe",
+		"body": [
+			"describe(\"\", () => {",
+			"  ",
+			"});"
+		],
+		"description": "Jest describe"
+	},
+	"Jest test": {
+		"prefix": "jest-test",
+		"body": [
+			"test(\"\", () => {",
+			"  // Given",
+			"  ",
+			"  // When",
+			"  const actual = ${1:functionUnderTest}();",
+			"  ",
+			"  // Then",
+			"  const expected: ${2:number} = 0;",
+			"  expect(actual).toEqual(expected);",
+			"});"
+		],
+		"description": "Jest test"
+	},
+	"Jest short test": {
+		"prefix": "jest-test-short",
+		"body": [
+			"test(\"\", () => {",
+			"  expect(${1:functionUnderTest}()).toEqual(${2:expected});",
+			"});"
+		],
+		"description": "Jest short test"
+	},
 }
