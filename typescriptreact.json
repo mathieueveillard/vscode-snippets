@@ -86,6 +86,13 @@
 		],
 		"description": "React children"
 	},
+	"React use state": {
+		"prefix": "react-use-state",
+		"body": [
+			"const [state, setState] = React.useState<number>(0);"
+		],
+		"description": "React use state hook"
+	},
 	"Jest describe": {
 		"prefix": "jest-describe",
 		"body": [
