@@ -27,28 +27,10 @@
 			"export default Component;",
 			""
 		],
-		"description": "React Component"
+		"description": "React component with no props"
 	},
 	"React Component with props": {
 		"prefix": "react-component-props",
-		"body": [
-			"import React from \"react\";",
-			"",
-			"type Props = {",
-			"",
-			"};",
-			"",
-			"const Component: React.FunctionComponent<Props> = ({}) => <div>",
-			"",
-			"</div>;",
-			"",
-			"export default Component;",
-			""
-		],
-		"description": "React Component"
-	},
-	"React Component with children": {
-		"prefix": "react-component-children",
 		"body": [
 			"import React from \"react\";",
 			"",
@@ -63,21 +45,21 @@
 			"export default Component;",
 			""
 		],
-		"description": "React Component"
+		"description": "React component with props, including children props."
 	},
-	"React Component with Sub Component": {
-		"prefix": "react-component-sub-component",
+	"React Compound Component": {
+		"prefix": "react-compound-component",
 		"body": [
 			"import React from \"react\";",
 			"import SubComponent from \"./SubComponent\";",
 			"",
 			"type Props = {",
-			"",
+			"  children: React.ReactNode;",
 			"};",
 			"",
-			"const MainComponent: React.FunctionComponent<Props> = ({}) => <div>",
-			"",
-			"</div>;",
+			"const MainComponent: React.FunctionComponent<Props> = ({ children }) => (",
+			"  <div>{children}</div>",
+			");",
 			"",
 			"const Component = MainComponent as React.FunctionComponent<Props> & {",
 			"  SubComponent: typeof SubComponent;",
@@ -88,12 +70,12 @@
 			"export default Component;",
 			""
 		],
-		"description": "React Component with Sub Component"
+		"description": "React compound component"
 	},
 	"React render props": {
 		"prefix": "react-render-props",
 		"body": [
-			"${1:render}(): React.ReactElement;"
+			"${1:render}: () => React.ReactElement;"
 		],
 		"description": "React render props"
 	},
