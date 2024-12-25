@@ -16,12 +16,12 @@
       "",
       "const Component: React.FunctionComponent = () => <div>",
       "",
-      "</div>",
+      "</div>;",
       "",
       "export default Component;",
       ""
     ],
-    "description": "React Component"
+    "description": "React component with no props"
   },
   "React Component with props": {
     "prefix": "react-component-props",
@@ -29,27 +29,57 @@
       "import React from \"react\";",
       "",
       "type Props = {",
+      "  children: React.ReactNode;",
+      "};",
       "",
-      "}",
-      "",
-      "const Component: React.FunctionComponent<Props> = ({}) => <div>",
-      "",
-      "</div>",
+      "const Component: React.FunctionComponent<Props> = ({ children }) => (",
+      "  <div>{children}</div>",
+      ");",
       "",
       "export default Component;",
       ""
     ],
-    "description": "React Component"
+    "description": "React component with props, including children props."
+  },
+  "React Compound Component": {
+    "prefix": "react-compound-component",
+    "body": [
+      "import React from \"react\";",
+      "import SubComponent from \"./SubComponent\";",
+      "",
+      "type Props = {",
+      "  children: React.ReactNode;",
+      "};",
+      "",
+      "const MainComponent: React.FunctionComponent<Props> = ({ children }) => (",
+      "  <div>{children}</div>",
+      ");",
+      "",
+      "const Component = MainComponent as React.FunctionComponent<Props> & {",
+      "  SubComponent: typeof SubComponent;",
+      "};",
+      "",
+      "Component.SubComponent = SubComponent;",
+      "",
+      "export default Component;",
+      ""
+    ],
+    "description": "React compound component"
   },
   "React render props": {
     "prefix": "react-render-props",
-    "body": ["${1:render}(): React.ReactElement;"],
+    "body": ["${1:render}: () => React.ReactElement;"],
     "description": "React render props"
   },
   "React children": {
     "prefix": "react-children",
     "body": ["children: React.ReactNode;"],
     "description": "React children"
+  },
+  "React use state": {
+    "prefix": "react-use-state",
+    "body": ["const [state, setState] = React.useState<number>(0);"],
+    "description": "React use state hook"
   },
   "Jest describe": {
     "prefix": "jest-describe",
