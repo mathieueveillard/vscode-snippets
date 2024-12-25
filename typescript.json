@@ -4,6 +4,20 @@
     "body": ["(() => {", "", "})()"],
     "description": "Immediatly Invoked Function Expression"
   },
+  "End-to-end Page Model": {
+    "prefix": "e2e-page-model",
+    "body": [
+      "const model = () => {",
+      "",
+      "  return {",
+      "",
+      "  }",
+      "}",
+      "",
+      "export default model;"
+    ],
+    "description": "Jest short test"
+  },
   "1-arity function": {
     "prefix": "function-arity-1",
     "body": ["const ${1:functionName} = (): ${2:ReturnType} => "],
