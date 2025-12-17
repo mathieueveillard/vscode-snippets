@@ -16,20 +16,25 @@
       "",
       "export default model;"
     ],
-    "description": "Jest short test"
+    "description": "e2e page model function"
   },
   "1-arity function": {
     "prefix": "function-arity-1",
     "body": ["const ${1:functionName} = (): ${2:ReturnType} => "],
     "description": "Function of arity 1"
   },
-  "Jest describe": {
-    "prefix": "jest-describe",
-    "body": ["describe(\"\", () => {", "  ", "});"],
-    "description": "Jest describe"
+  "Vitest imports": {
+    "prefix": "vitest-imports",
+    "body": ["import { describe, expect, test } from \"vitest\";"],
+    "description": "Vitest imports"
   },
-  "Jest test": {
-    "prefix": "jest-test",
+  "Vitest describe": {
+    "prefix": "vitest-describe",
+    "body": ["describe(\"\", () => {", "  ", "});"],
+    "description": "Vitest describe"
+  },
+  "Vitest test": {
+    "prefix": "vitest-test",
     "body": [
       "test(\"\", () => {",
       "  // Given",
@@ -42,19 +47,19 @@
       "  expect(actual).toEqual(expected);",
       "});"
     ],
-    "description": "Jest test"
+    "description": "Vitest test"
   },
-  "Jest short test": {
-    "prefix": "jest-test-short",
+  "Vitest short test": {
+    "prefix": "vitest-test-short",
     "body": [
       "test(\"\", () => {",
       "  expect(${1:functionUnderTest}()).toEqual(${2:expected});",
       "});"
     ],
-    "description": "Jest short test"
+    "description": "Vitest short test"
   },
-  "Jest property-based testing": {
-    "prefix": "jest-test-pbt",
+  "Vitest property-based testing": {
+    "prefix": "vitest-test-pbt",
     "body": [
       "test(\"\", () => {",
       "  fc.assert(",
@@ -65,10 +70,10 @@
       "  );",
       "});"
     ],
-    "description": "Jest test"
+    "description": "Vitest test"
   },
-  "Jest full": {
-    "prefix": "jest-describe-and-test",
+  "Vitest full": {
+    "prefix": "vitest-describe-and-test",
     "body": [
       "describe(\"\", () => {",
       "  test(\"\", () => {",
@@ -83,6 +88,6 @@
       "  });",
       "});"
     ],
-    "description": "Jest describe and test"
+    "description": "Vitest describe and test"
   }
 }
