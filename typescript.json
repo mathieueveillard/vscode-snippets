@@ -1,4 +1,14 @@
 {
+  "Type Parameters": {
+    "prefix": "parameters",
+    "body": ["type Parameters = {", "", "}"],
+    "description": "Parameters type"
+  },
+  "Type Dependencies": {
+    "prefix": "dependencies",
+    "body": ["type Dependencies = {", "", "}"],
+    "description": "Dependencies type"
+  },
   "iife": {
     "prefix": "iife",
     "body": ["(() => {", "", "})()"],
